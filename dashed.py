@@ -18,7 +18,7 @@ def dashed(va):
          
 
 
-f=""
+f=""  # not needed
 
 f=dashed(var);
 print("Original string:",var,"\n")
