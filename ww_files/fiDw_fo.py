@@ -107,41 +107,42 @@ def conv_to_lis(line):
 
 import urllib.request
 
-if __name__ == '__main__':
-  #1. Download files 
-  '''  
-  url1 = ""
-  url2 = ""
-  url3 = ""
 
-  urllib.request.urlretrieve(url,./file_1.txt)    #
-  urllib.request.urlretrieve(url2,./file_2.txt)
-  urllib.request.urlretrieve(url3,./file_3.txt)
-  '''
+if __name__ == '__main__':
+
+  #1. Download files 
+    
+  url1 = "https://gist.githubusercontent.com/aakashns/257f6e6c8719c17d0e498ea287d1a386/raw/7def9ef4234ddf0bc82f855ad67dac8b971852ef/loans1.txt"
+  url2 = "https://gist.githubusercontent.com/aakashns/257f6e6c8719c17d0e498ea287d1a386/raw/7def9ef4234ddf0bc82f855ad67dac8b971852ef/loans2.txt"
+  url3 = "https://gist.githubusercontent.com/aakashns/257f6e6c8719c17d0e498ea287d1a386/raw/7def9ef4234ddf0bc82f855ad67dac8b971852ef/loans3.txt"
+
+  urllib.request.urlretrieve(url1,'ww_files/data/file_1.txt')    #
+  urllib.request.urlretrieve(url2,'ww_files/data/file_2.txt')
+  urllib.request.urlretrieve(url3,'ww_files/data/file_3.txt')
+
   
   #2.Read files 
-'''  
-  file1_con = read_csv_columnar(./file_1)
-  file2_con = read_csv_columnar(./file_2)
-'''
-
-file3_con = read_csv_columnar(r'data_sc.py/working_with_files/os_file_handle/loans.txt')
+  
+  file1_con = read_csv_columnar(r'ww_files/data/file_1.txt')
+  file2_con = read_csv_columnar(r'ww_files/data/file_2.txt')
+  file3_con = read_csv_columnar(r'ww_files/data/file_3.txt')
 
   #3. Convert Data to given format
-'''  
+  
   dic_1 = dic_con(file1_con)
   dic_2 = dic_con(file2_con)
-
-'''  
-dic_3 = dic_con(file3_con)
+  dic_3 = dic_con(file3_con)
 
 
 
   #4. Compute and update data
     #4.1 compute emi 
     #4.2 fill emi
-  
-new_dic(dic_3)
-print(dic_3)
+  new_dic(dic_1)
+  new_dic(dic_2)
+  new_dic(dic_3)
+#print(dic_3)
   #5. Write the processed data in the result file in CSV format 
-write_csv_columnar(r"data_sc.py/working_with_files/os_file_handle/new_loans.txt",dic_3)
+  write_csv_columnar(r"ww_files/data/loan1.txt",dic_1)
+  write_csv_columnar(r"ww_files/data/loan2.txt",dic_2)
+  write_csv_columnar(r"ww_files/data/loan3.txt",dic_3)
